@@ -1,0 +1,12 @@
+appId: com.aiclient.app
+productName: AI Client
+directories:
+  output: release
+files:
+  - dist/**/*
+  - src/renderer/**/*
+mac:
+  category: public.app-category.productivity
+  target:
+    - dmg
+    - zip

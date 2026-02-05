@@ -1,0 +1,39 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "env": {
+    "es2020": true
+  },
+  "rules": {
+    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
+    "max-lines": ["error", { "max": 500, "skipBlankLines": true, "skipComments": true }],
+    "complexity": ["error", 10],
+    "max-depth": ["error", 4],
+    "max-params": ["error", 4],
+    "max-nested-callbacks": ["error", 3]
+  },
+  "overrides": [
+    {
+      "files": ["src/main/**/*.ts"],
+      "env": {
+        "node": true
+      }
+    },
+    {
+      "files": ["src/renderer/**/*.ts"],
+      "env": {
+        "browser": true
+      }
+    }
+  ],
+  "ignorePatterns": ["dist/", "release/", "node_modules/"]
+}
