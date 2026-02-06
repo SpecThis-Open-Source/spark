@@ -33,6 +33,15 @@
       "env": {
         "browser": true
       }
+    },
+    {
+      "files": ["tests/**/*.ts"],
+      "env": {
+        "node": true
+      },
+      "rules": {
+        "max-lines": ["error", { "max": 600, "skipBlankLines": true, "skipComments": true }]
+      }
     }
   ],
   "ignorePatterns": ["dist/", "release/", "node_modules/"]
