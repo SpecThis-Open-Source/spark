@@ -8,8 +8,40 @@
   </head>
   <body>
     <div id="app">
-      <h1>AI Client</h1>
-      <p>Ready.</p>
+      <aside id="sidebar">
+        <div id="sidebar-header">
+          <button id="new-chat-btn" type="button">+ New Chat</button>
+        </div>
+        <ul id="conversation-list"></ul>
+      </aside>
+      <main id="chat-area">
+        <div id="chat-header">
+          <h1 id="chat-title">AI Client</h1>
+          <button id="settings-btn" type="button">Settings</button>
+        </div>
+        <div id="error-banner" class="hidden"></div>
+        <div id="message-list"></div>
+        <div id="empty-state" class="hidden">
+          <p>Start a new conversation by typing a message below.</p>
+        </div>
+        <div id="input-area">
+          <textarea id="message-input" placeholder="Type a message..." rows="1"></textarea>
+          <button id="send-btn" type="button">Send</button>
+        </div>
+      </main>
     </div>
+    <div id="settings-panel" class="hidden">
+      <div id="settings-content">
+        <h2>Settings</h2>
+        <label for="api-key-input">Anthropic API Key</label>
+        <input id="api-key-input" type="password" placeholder="sk-ant-..." />
+        <div id="api-key-status"></div>
+        <div id="settings-actions">
+          <button id="save-key-btn" type="button">Save</button>
+          <button id="close-settings-btn" type="button">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <script src="../../dist/renderer/app.js"></script>
   </body>
 </html>
