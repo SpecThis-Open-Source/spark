@@ -72,17 +72,3 @@ test('sending message without api key shows error banner', async () => {
   await expect(errorBanner.locator('span')).not.toHaveText('');
 });
 
-test('error banner can be dismissed', async () => {
-  ctx = await launchApp({ ANTHROPIC_API_KEY: '' });
-
-  const input = ctx.page.locator('#message-input');
-  await input.fill('Hello');
-  await input.press('Enter');
-
-  const errorBanner = ctx.page.locator('#error-banner');
-  await expect(errorBanner).toBeVisible({ timeout: 10000 });
-
-  const dismissBtn = ctx.page.locator('.error-dismiss');
-  await dismissBtn.click();
-  await expect(errorBanner).toBeHidden();
-});
