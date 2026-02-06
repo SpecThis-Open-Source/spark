@@ -10,3 +10,9 @@ mac:
   target:
     - dmg
     - zip
+linux:
+  target:
+    - AppImage
+win:
+  target:
+    - nsis
