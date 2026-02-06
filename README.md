@@ -1,4 +1,4 @@
-# Spark
+# Spark ⚡
 
 A local-first AI chatbot built entirely using spec-driven development.
 
