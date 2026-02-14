@@ -1,0 +1,18 @@
+{
+  "branches": ["main"],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          { "path": "artifacts/**/*.dmg", "label": "macOS (DMG)" },
+          { "path": "artifacts/**/*.zip", "label": "macOS (ZIP)" },
+          { "path": "artifacts/**/*.AppImage", "label": "Linux (AppImage)" },
+          { "path": "artifacts/**/*Setup*.exe", "label": "Windows (Installer)" }
+        ]
+      }
+    ]
+  ]
+}
