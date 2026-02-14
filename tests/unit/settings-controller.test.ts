@@ -14,7 +14,7 @@ beforeEach(() => {
     <button id="close-settings-btn"></button>
     <button id="save-key-btn"></button>
   `;
-  (window as any).electronAPI = {
+  (window as unknown as { electronAPI: unknown }).electronAPI = {
     getApiKeyStatus: vi.fn().mockResolvedValue({ isSet: true, isValid: true }),
     setApiKey: vi.fn().mockResolvedValue({ success: true }),
   };
@@ -65,6 +65,6 @@ describe('SettingsController', () => {
     await flushPromises();
     const status = document.getElementById('api-key-status')!;
     expect(status.textContent).toBe('API key saved!');
-    expect((window as any).electronAPI.setApiKey).toHaveBeenCalledWith('sk-ant-test-key-12345');
+    expect(window.electronAPI.setApiKey).toHaveBeenCalledWith('sk-ant-test-key-12345');
   });
 });

@@ -23,7 +23,7 @@ beforeEach(() => {
     <div id="error-banner" class="hidden"></div>
     <h2 id="chat-title"></h2>
   `;
-  (window as any).electronAPI = mockElectronAPI;
+  (window as unknown as { electronAPI: unknown }).electronAPI = mockElectronAPI;
   vi.clearAllMocks();
 
   // Mock crypto.randomUUID

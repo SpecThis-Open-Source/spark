@@ -3,7 +3,7 @@ import { SidebarController } from '../../src/renderer/sidebar-controller';
 
 beforeEach(() => {
   document.body.innerHTML = `<ul id="conversation-list"></ul>`;
-  (window as any).electronAPI = {
+  (window as unknown as { electronAPI: unknown }).electronAPI = {
     listConversations: vi.fn().mockResolvedValue([
       { id: '1', title: 'Chat 1', createdAt: 1000, updatedAt: 2000, messageCount: 3 },
       { id: '2', title: 'Chat 2', createdAt: 1000, updatedAt: 1500, messageCount: 1 },
