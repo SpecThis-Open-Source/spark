@@ -53,20 +53,6 @@ Create a `.env` file in the project root for your API key (gitignored by default
 
 ---
 
-## The Spec This Methodology
-
-Check out the `/specs` directory to see how this was built:
-
-- **Work Plans** — High-level intent with acceptance criteria and non-goals
-- **Work Items** — Each subtask with planned file changes specified upfront
-- **Verification Notes** — How the AI output was checked against the plan
-
-If you're using AI coding tools and finding yourself lost in walls of generated code, wondering if what got built matches what you meant — that's the problem Spec This solves.
-
-[Learn more about Spec This](https://specthis.com)
-
----
-
 ## Contributing
 
 This is an open project under the [Spec This GitHub Org](https://github.com/spec-this). Contributions welcome — but we practice what we preach. PRs should reference a work plan.
